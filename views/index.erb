@@ -1,0 +1,12 @@
+<p>All the pizzas!!!</p>
+
+<% for order in @orders %>
+<!-- this starts a ruby loop for each entry in the table by calling the functions in the pizza_order.rb file -->
+  <p>Name: <%= order.pretty_name() %></p>
+  <p>Order: <%= order.quantity()%> X <%= order.topping() %></p>
+<!-- This will display the orders one after another -->
+  <p><a href='/pizza_orders/<%= order.id %>'>Show Order</a></p>
+  <!-- this lets us handle finding the id behind the scenes and the user just has to click a link rather than having to input the id of the table entry manually into the url -->
+  <!-- <p><a href='/pizza_orders/<%=order.id%>/delete'>Delete Order</a></p> -->
+
+<%end%>
